@@ -25,7 +25,7 @@ SECRET_KEY = 'adl8-vbht%-87opw!c6)$8u)!6dk)j^12+@q0=zblv8ya43#%+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost','54.175.205.45']
 
 
 # Application definition
@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'CLSE.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'CLDB',
+        'USER' : 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'database-1.c8hjhpmlhlok.us-east-1.rds.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
