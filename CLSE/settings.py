@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'adl8-vbht%-87opw!c6)$8u)!6dk)j^12+@q0=zblv8ya43#%+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost','54.175.205.45']
+ALLOWED_HOSTS = ['localhost','54.175.205.45','18.206.127.19']
 
 
 # Application definition
@@ -76,10 +76,10 @@ WSGI_APPLICATION = 'CLSE.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'CLDB',
+        'NAME': 'danieldb',
         'USER' : 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': 'database-1.c8hjhpmlhlok.us-east-1.rds.amazonaws.com',
+        'HOST': 'db-instance.cf1psccukh2y.us-east-1.rds.amazonaws.com',
         'PORT': '5432'
     }
 }
