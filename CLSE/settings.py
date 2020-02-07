@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'adl8-vbht%-87opw!c6)$8u)!6dk)j^12+@q0=zblv8ya43#%+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','54.175.205.45','18.206.127.19']
+ALLOWED_HOSTS = ['127.0.0.1','54.175.205.45','18.206.127.19']
 
 
 # Application definition
@@ -37,7 +37,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
+REST_FRAMEWORK = {
+'DEFAULT_PERMISSION_CLASSES':('rest_framework.permissions.IsAuthenticated',),
+'DEFAULT_AUTHENTICATION_CLASSES':('rest_framework.authentication.TokenAuthentication',),
+'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+'PAGE_SIZE': 100
+}
+
+CORS_ALLOW_METHODS = (
+'DELETE',
+'GET',
+'POST',
+'PUT',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
